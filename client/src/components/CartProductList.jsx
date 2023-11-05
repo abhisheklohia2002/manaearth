@@ -14,9 +14,10 @@ export default function CartProductList({
 }) {
   const selector = useSelector((state) => state.ProductSlice);
 //   console.log(selector);
+
   const dispatch = useDispatch();
   const [done, setdone] = useState(true);
-  const [count, setcount] = useState(0);
+  const [count, setcount] = useState("");
   const HandleAdd_TO_Cart = (id, pic, title, dec, rate, review, price) => {
     const getresult = selector.find((e, i) => e.id === id);
     // console.log(getresult, "hello");
@@ -25,12 +26,13 @@ export default function CartProductList({
 
       dispatch(RemoveProduct({ id }));
       let qty = getresult.qty + 1;
-      setcount((count)=>count+1)
+      setcount(qty)
       const payload = { id, pic, title, dec, rate, review, price, qty };
       dispatch(AddProduct(payload));
     } else {
         let qty = 1;
-        setcount((count) => count + 1);
+      setcount(qty)
+       
       const payload = { id, pic, title, dec, rate, review, price, qty };
     //   console.log(payload);
       dispatch(AddProduct(payload));
@@ -40,16 +42,18 @@ export default function CartProductList({
   const Handle_Remove_To_cart = (id) => {
     const getresult = selector.find((e, i) => e.id === id);
     if (getresult.qty > 1) {
-      setcount((count) => count - 1);
-
+      
+      
       let qty = getresult.qty - 1;
+      setcount(qty)
       const payload = { id, pic, title, dec, rate, review, price, qty };
       dispatch(RemoveProduct({ id }));
 
       dispatch(AddProduct(payload));
     } else {
       dispatch(RemoveProduct({ id }));
-      setcount((count) => count - 1);
+      setcount(1)
+    
       setdone(!done);
 
     }

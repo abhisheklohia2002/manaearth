@@ -2,7 +2,9 @@ import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import Home from '../../pages/Home'
-export default function BottomNav() {
+import FacePage from '../../pages/FacePage'
+export default function BottomNav({search}) {
+
   return (
   <Box mt={0}>
 <Tabs variant={"enclosed"}  colorScheme='green'>
@@ -25,7 +27,7 @@ export default function BottomNav() {
   </TabList>
   <TabPanels>
     <TabPanel>
-     <Home/>
+     <Home   info = {search} />
     </TabPanel>
     <TabPanel>
       <p>two!</p>
@@ -34,9 +36,7 @@ export default function BottomNav() {
       <p>Three!</p>
     </TabPanel>
     <TabPanel>
-        <p>
-            Four
-        </p>
+      <FacePage/>
     </TabPanel>
     <TabPanel>
         <p>five</p>

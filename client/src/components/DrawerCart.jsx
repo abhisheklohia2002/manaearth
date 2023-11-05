@@ -58,7 +58,7 @@ alignContent={"center"} alignItems={"center"}
    <span
     className='text-xs font-semibold '
    >
-    ${price}
+    ${price * qty}
    </span>
 
 
