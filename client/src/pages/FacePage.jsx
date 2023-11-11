@@ -20,7 +20,7 @@ export default function FacePage({
 const [FaceProducts,setfaceproduct] = useState([])
   const AllProducts = async()=>{
     try{
-const callServer = await fetch(`http://localhost:8080/api/product`);
+const callServer = await fetch(`https://manaearth.vercel.app/api/product`);
 const res = await callServer.json();
 setfaceproduct(res)
 console.log(FaceProducts)

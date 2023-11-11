@@ -76,7 +76,7 @@ setValueProgress(()=>ValueProgress+25)
     try {
       if (username !== "" || mobile !== "" || email !== "" || password !== "") {
         seterrmessage(null);
-        const callServer = await fetch('http://localhost:8080/api/sign', {
+        const callServer = await fetch('https://manaearth.vercel.app/api/sign', {
           method: "POST",
           headers: {
             "Content-Type": "application/json", // Corrected content type
@@ -118,7 +118,7 @@ const HandleSignIn = async()=>{
   const { username, mobile, email, password } = signup;
 seterrmessage(null)
   try {
-    const callServer = await fetch('http://localhost:8080/api/login', {
+    const callServer = await fetch('https://manaearth.vercel.app/api/login', {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // Corrected content type
