@@ -1,10 +1,11 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Divider, Flex } from '@chakra-ui/react'
 import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody } from '@chakra-ui/react';
 
 import React, { useEffect, useState } from 'react'
 import CartProductList from '../components/CartProductList'
 import { Grid, GridItem } from '@chakra-ui/react'
 import { BiSort } from "react-icons/bi";
+import LargeWithAppLinksAndSocial from '../components/Footer';
 const Product = [
   {
     id:506,
@@ -238,8 +239,123 @@ className='text-center text-xl font-bold pt-4'
 >
 Super Safe Standards
 </p>
+<Grid  templateColumns='repeat(3, 1fr)' gap={6}>
+
+<Box className='flex place-items-center'>
+  <img src="https://images.mamaearth.in/wysiwyg/dermatology-tested-100x100.png?fit=contain" alt="" />
+  <span className='ml-3'>
+ <h3
+ className='font-semibold'
+ 
+ > Dermatologically Tested</h3>
+ <p>
+ We ensure each product is tested clinically on the sensitive human skin to ensure that it is not allergic.
+ </p>
+  </span>
+  </Box>
+
+  <Box className='flex place-items-center'>
+  <img src="https://images.mamaearth.in/wysiwyg/fda-100x100.jpg?fit=contain" alt="" />
+  <span
+  className='ml-3'
+  >
+ <h3
+ className='font-semibold'
+ >FDA Approved</h3>
+ <p>
+ MamaEarth is FDA approved, which means we are 100% safe to be used for babies as well as mamas.
+ </p>
+  </span>
+  </Box>
+
+
+  <Box className='flex place-items-center'>
+  <img src="https://images.mamaearth.in/wysiwyg/msafe-100x100.jpg?fit=contain" alt="" />
+  <span
+  className='ml-3'
+  >
+ <h3 className='font-semibold'>Made Safe Certified</h3>
+ <p>
+ The MADE SAFE (Made with Safe Ingredients™) seal means that a product is literally made with safe ingredients.
+ </p>
+  </span>
+  </Box>
+</Grid>
  
   </Box>
+ <Grid
+ templateColumns="repeat(3, 1fr)" gap = {6}
+ paddingLeft={"8%"}
+ marginTop={"5%"}
+
+ >
+
+<Box
+
+pl={"30%"}
+>
+  <img  className='pl-9' src="https://images.mamaearth.in/wysiwyg/mobile-truck.png" alt="" />
+  <h3>
+    Free Shipping 
+
+  </h3>
+  <h3>
+    on Orders Above Rs.399
+  </h3>
+
+
+  <Divider orientation=''/>
+</Box>
+
+<Box
+
+pl={"30%"}
+>
+  <img className='pl-9'  src="https://images.mamaearth.in/wysiwyg/mobile-wallet.png" alt="" />
+  <h3>
+COD Available 
+
+  </h3>
+  <h3>
+    @ Rs.40 Per Order
+  </h3>
+  <Divider orientation=''/>
+
+</Box>
+
+<Box className='pt-8'>
+
+  <h3 className='text-2xl'>
+    Have Queries or Concerns ?
+
+  </h3>
+ <Button
+ className='uppercase'
+ margin={"auto"}
+ bg={"Highlight"}
+ colorScheme='white'
+ mt={5}
+ >
+  Contact Us
+ </Button>
+ {/* <Divider orientation=''/> */}
+
+</Box>
+
+ </Grid>
+  <Box p={10}>
+    <h3 className='uppercase'>
+      Payment
+    </h3>
+    <span className='text-green-800 flex mt-2'>
+    <img className='w-5 mr-2' src="https://images.mamaearth.in/wysiwyg/noun_trusted_27146262x_6Ekja92.png" alt="" />
+    100% Payment Protection, Easy Return Policy
+    </span>
+
+    <img src="https://images.mamaearth.in/png/web-payments.png" alt="" />
+  </Box>
+
+  <LargeWithAppLinksAndSocial/>
    </Box>
   )
 }

@@ -21,6 +21,7 @@ import { Progress } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { AddAuth } from "../Store/AuthSlice";
 import { useDispatch } from "react-redux";
+import TopNavbar from "../components/Navbar/TopNavbar";
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -160,40 +161,48 @@ else {
   return (
     <>
       <img
-        onClick={() => Nav("/")}
-        className="absolute w-96"
-        src="https://image.slidesharecdn.com/mamaearth-210531051812/75/mamaearth-ppt-1-2048.jpg?cb=1665830660"
+       
+        className="absolute object-fill"
+        style={{width:"100%"}}
+        src="https://cdn.pixabay.com/photo/2017/02/13/09/13/drops-of-milk-2062100_1280.jpg"
         alt=""
       />
      
+
+ 
       <Flex
-        flexDirection="column"
-        width="100wh"
-        height="100vh"
-        backgroundColor="white.200"
-        // backgroundImage={"https://image.slidesharecdn.com/mamaearth-210531051812/75/mamaearth-ppt-1-2048.jpg?cb=1665830660"}
-        justifyContent="center"
-        alignItems="center"
+   
+    
       >
         <Stack
           flexDir="column"
-          mb="2"
+         
           justifyContent="center"
           alignItems="center"
         >
-          <Avatar bg="green.500" />
-          <Heading color="blue.400">{toggle ? "Welcome," : "Sign Up"}</Heading>
-          <Box minW={{ base: "90%", md: "468px" }}>
-            <form>
+          {/* <Avatar className="absolute" bg="black.500" /> */}
+          <Box minW={{ base: "", md: "" }}>
+          {/* <Heading className="" color="white.400">{toggle ? "Welcome,Sign In" : "Sign Up"}</Heading> */}
+            
+            <form
+            
+            className="w-3/12 absolute p-12 bg-white my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75"
+            >
+              
               <Stack
                 spacing={4}
                 p="1rem"
-                backgroundColor="whiteAlpha.900"
+                backgroundColor=""
                 boxShadow="md"
               >
+          <Heading className="text-sm" fontSize={"20"} color="blackAlpha.600">{toggle ? "Welcome,Sign In" : "Sign Up"}</Heading>
+
+
+
                 {toggle ? (
                   ""
                 ) : (
+
                   <FormControl>
                     <InputGroup>
                       <InputLeftElement
@@ -265,7 +274,7 @@ else {
                       </Button>
                     </InputRightElement>
                   </InputGroup>
-                  <FormHelperText textAlign="right">
+                  <FormHelperText color={"blackAlpha.600"} textAlign="right">
                     <Link>forgot password?</Link>
                   </FormHelperText>
                 </FormControl>
@@ -301,15 +310,16 @@ else {
        </p>
                 <Progress hasStripe value={ValueProgress} />
               </Stack>
-            </form>
-          </Box>
-        </Stack>
-        <Box>
+              <Box color={"blackAlpha.600"}>
           {toggle ? "New to us ?  " : "Already Register ?  "}
-          <Link onClick={() => settoggle(!toggle)} color="teal.500">
+          <Link color={"blackAlpha.600"} onClick={() => settoggle(!toggle)} >
             {toggle ? "Sign Up" : "Sign In"}
           </Link>
         </Box>
+            </form>
+          </Box>
+        </Stack>
+       
       </Flex>
     </>
   );

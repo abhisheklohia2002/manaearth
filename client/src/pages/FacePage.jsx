@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { BiSort } from "react-icons/bi";
 import { Grid, GridItem } from '@chakra-ui/react'
 import CartProductList from "../components/CartProductList";
+import LargeWithAppLinksAndSocial from "../components/Footer";
 const arr = [
   "https://images.ctfassets.net/66mrrren2unf/6hO4nfD3zudJXPMkQNKXFV/265b7d096869c376d11afcdaf7956a74/1920X512.jpg?q=40",
   "https://images.ctfassets.net/66mrrren2unf/78bO0PUzojusja2SRo6tMh/37c2c39fd48e4e3a640d94a69a5b9e74/1920x520__3___1_.jpg?q=40",
@@ -12,7 +13,9 @@ const arr = [
   "https://images.ctfassets.net/66mrrren2unf/1ItcpMJJD5vNEdq8GGNTfm/21c08796b2ac576edfb228049beb9159/Desktop.jpg?q=40",
 ];
 
-export default function FacePage() {
+export default function FacePage({
+  title,p1,p2,p3,p4,p5
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 const [FaceProducts,setfaceproduct] = useState([])
   const AllProducts = async()=>{
@@ -74,7 +77,7 @@ AllProducts()
     <>
       <img className="object-contain" src={arr[currentIndex]} alt="" />
       <Box className="text-center font-bold text-2xl mt-10">
-        Best Skin Care Products
+       {title}
       </Box>
 
       <Flex className="justify-between" width={"80%"} margin={"auto"}>
@@ -141,31 +144,31 @@ AllProducts()
     className="uppercase"
         
         >
-            Face Toner
+{p1}
         </Button>
         <Button
     className="uppercase"
         
         >
-            Face Srum
+            {p2}
         </Button>
         <Button
     className="uppercase"
         
         >
-            Face gel
+            {p3}
         </Button>
         <Button
     className="uppercase"
         
         >
-            Face Cream
+           {p4}
         </Button>
         <Button
     className="uppercase"
         
         >
-            Face Wash
+            {p5}
         </Button>
       </Flex>
 <Box>
@@ -183,6 +186,18 @@ AllProducts()
  </Grid>
 
 </Box>
+<Box p={10}>
+    <h3 className='uppercase'>
+      Payment
+    </h3>
+    <span className='text-green-800 flex mt-2'>
+    <img className='w-5 mr-2' src="https://images.mamaearth.in/wysiwyg/noun_trusted_27146262x_6Ekja92.png" alt="" />
+    100% Payment Protection, Easy Return Policy
+    </span>
+
+    <img src="https://images.mamaearth.in/png/web-payments.png" alt="" />
+  </Box>
+<LargeWithAppLinksAndSocial/>
 
     </>
   );

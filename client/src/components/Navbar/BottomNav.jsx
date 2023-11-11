@@ -30,13 +30,28 @@ export default function BottomNav({search}) {
      <Home   info = {search} />
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+    <FacePage
+      title = " Best Beauty Care Products" p1= "Hair Oil"
+      p2 = "Face Srum" p3 = "Hair gel"
+      p4 = " Face Cream" p5 = "Hair Wash"
+      />
+      
     </TabPanel>
     <TabPanel>
-      <p>Three!</p>
+   
+       <FacePage
+      title = " Best Hair Care Products" p1= "Hair Oil"
+      p2 = "Hair Srum" p3 = "Hair gel"
+      p4 = " Hair Cream" p5 = "Hair Wash"
+      />
+     
     </TabPanel>
     <TabPanel>
-      <FacePage/>
+      <FacePage
+      title = " Best Skin Care Products" p1= "Face Toner"
+      p2 = "Face Srum" p3 = "Face gel"
+      p4 = " Face Cream" p5 = "Face Wash"
+      />
     </TabPanel>
     <TabPanel>
         <p>five</p>
